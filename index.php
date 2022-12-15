@@ -27,7 +27,7 @@ $myArr = [
 
 // NAME
 
-if (isset($_GET['name'])) {
+if (isset($_GET['name']) && $_GET['name'] != '') {
     $name = $_GET['name'];
     if (strlen($name) <= 3) {
         $messageName = 'Name too short';
@@ -58,7 +58,7 @@ if (isset($_GET['mail']) && $_GET['mail'] != '') {
 
 // AGE
 
-if (isset($_GET['age'])) {
+if (isset($_GET['age']) && $_GET['age'] != '') {
     $age = $_GET['age'];
     if (is_numeric($age)) {
         $messageAge = 'Age is correct';
@@ -91,19 +91,17 @@ while (count($arrNumbers) < 15) {
 </head>
 <body>
     <h1>Snack 1</h1>
-    <ul>
-        <?php for ($i = 0; $i < count($myArr); $i++) { ?>
-           <li>
-                <?php echo $myArr[$i]['home']['team']; ?>
-                - 
-                <?php echo $myArr[$i]['away']['team']; ?>
-                | 
-                <?php echo $myArr[$i]['home']['score']; ?>
-                - 
-                <?php echo $myArr[$i]['away']['score']; ?>
-           </li>
-        <?php } ?>
-    </ul>
+    <?php for ($i = 0; $i < count($myArr); $i++) { ?>
+        <span>
+            <?php echo $myArr[$i]['home']['team']; ?>
+            - 
+            <?php echo $myArr[$i]['away']['team']; ?>
+            | 
+            <?php echo $myArr[$i]['home']['score']; ?>
+            - 
+            <?php echo $myArr[$i]['away']['score']; ?>
+    </span>
+    <?php } ?>
 
     <h1>Snack 2</h1>
     <form action="" method="get">
