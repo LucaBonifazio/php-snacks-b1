@@ -93,13 +93,13 @@ while (count($arrNumbers) < 15) {
     <h1>Snack 1</h1>
     <?php for ($i = 0; $i < count($myArr); $i++) { ?>
         <span>
-            <?php echo $myArr[$i]['home']['team']; ?>
+            <?= $myArr[$i]['home']['team']; ?>
             - 
-            <?php echo $myArr[$i]['away']['team']; ?>
+            <?= $myArr[$i]['away']['team']; ?>
             | 
-            <?php echo $myArr[$i]['home']['score']; ?>
+            <?= $myArr[$i]['home']['score']; ?>
             - 
-            <?php echo $myArr[$i]['away']['score']; ?>
+            <?= $myArr[$i]['away']['score']; ?>
     </span>
     <?php } ?>
 
